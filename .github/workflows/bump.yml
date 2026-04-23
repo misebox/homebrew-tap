@@ -1,0 +1,33 @@
+name: Bump formula
+
+on:
+  workflow_dispatch:
+    inputs:
+      tool:
+        description: Formula name (e.g. oadig)
+        required: true
+        type: string
+      version:
+        description: New version (without v prefix, e.g. 0.2.0)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Update formula
+        run: scripts/update-formula.sh "${{ inputs.tool }}" "${{ inputs.version }}"
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/
+          git diff --cached --quiet && exit 0
+          git commit -m "Bump ${{ inputs.tool }} to ${{ inputs.version }}"
+          git push
+

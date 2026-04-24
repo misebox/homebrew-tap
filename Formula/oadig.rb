@@ -1,20 +1,20 @@
 class Oadig < Formula
   desc "Extract specific information from bloated OpenAPI specs"
   homepage "https://github.com/misebox/oadig"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT OR Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/misebox/oadig/releases/download/v#{version}/oadig-aarch64-apple-darwin.tar.gz"
-      sha256 "f5037b9331c7ba3bd92f92ff0e3e991dabe67a7d1bf413a0da0229750b4b2d96"
+      sha256 "96e5cbb78291f0166a2b9a3aec9da8f5867eceafcc57fee44fc92bd9208aa0a7"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/misebox/oadig/releases/download/v#{version}/oadig-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "9c18479e5d6a1a107e09f867fbe6745d335bbfa93ca4200dfec7bb7247e86c1b"
+      sha256 "6bec4e0ae984820f34f0815de67bf395d83364607b10ac1282975db39c49f8d6"
     end
   end
 

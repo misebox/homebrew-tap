@@ -7,14 +7,14 @@ class Reposcan < Formula
   on_macos do
     on_arm do
       url "https://github.com/misebox/reposcan/releases/download/v#{version}/reposcan-aarch64-apple-darwin.tar.gz"
-      sha256 "01588117135de430ad3f9de44ee0b190dce4fcc6880b5fa7cbfe2e9419b2012a"
+      sha256 "9b1c44acd104eae6752207e1dde8b902a9b74a1f393032887fbf3c7cb1ef0b7f"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/misebox/reposcan/releases/download/v#{version}/reposcan-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d9c041ea93984d597d35b011b297dba13fe66012de3fa59726371d39ae1674de"
+      sha256 "acb56863cbbed67e0ab88c266d375df0208b4003d93ecfb5100f186d0713ac00"
     end
   end
 
@@ -26,4 +26,3 @@ class Reposcan < Formula
     assert_match "reposcan", shell_output("#{bin}/reposcan --version")
   end
 end
-

@@ -24,5 +24,9 @@ for row in "${targets[@]}"; do
   ext=$(echo "$row"    | awk '{print $2}')
   url="${base}/${tool}-${target}.${ext}"
   printf "%-30s " "$target"
-  curl -fsSL "$url" | shasum -a 256 | awk '{print $1}'
+  if body=$(curl -fsSL "$url" 2>/dev/null); then
+    printf "%s\n" "$body" | shasum -a 256 | awk '{print $1}'
+  else
+    echo "-"
+  fi
 done

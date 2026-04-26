@@ -21,8 +21,8 @@ formula="Formula/${tool}.rb"
 output=$(scripts/sha256.sh "$tool" "$version")
 macos_arm=$(awk '/aarch64-apple-darwin/     {print $2}' <<<"$output")
 linux_x86=$(awk '/x86_64-unknown-linux-gnu/ {print $2}' <<<"$output")
-[ -n "$macos_arm" ] || { echo "error: macOS arm64 SHA not found" >&2; exit 1; }
-[ -n "$linux_x86" ] || { echo "error: Linux x86_64 SHA not found" >&2; exit 1; }
+[ -n "$macos_arm" ] && [ "$macos_arm" != "-" ] || { echo "error: macOS arm64 SHA not found (asset missing on release)" >&2; exit 1; }
+[ -n "$linux_x86" ] && [ "$linux_x86" != "-" ] || { echo "error: Linux x86_64 SHA not found (asset missing on release)" >&2; exit 1; }
 
 tmp=$(mktemp)
 awk -v v="$version" -v m="$macos_arm" -v l="$linux_x86" '

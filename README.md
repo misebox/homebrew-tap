@@ -14,6 +14,7 @@ brew install misebox/tap/oadig
 | Formula | Upstream |
 |---|---|
 | `oadig` | https://github.com/misebox/oadig |
+| `reposnap` | https://github.com/misebox/reposnap |
 
 ## Updating a formula
 

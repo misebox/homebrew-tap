@@ -1,20 +1,20 @@
 class Reposnap < Formula
   desc "Extract specific information from bloated OpenAPI specs"
   homepage "https://github.com/misebox/reposnap"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT OR Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/misebox/reposnap/releases/download/v#{version}/reposnap-aarch64-apple-darwin.tar.gz"
-      sha256 "2a7dbd90d5db991bc483d5fe3d587ae2b95b9cd913c7aec75d1621a32d35195c"
+      sha256 "5afb6685405bada0dcad649249f40c6a679a20ff989f79e472fae52e851a40f5"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/misebox/reposnap/releases/download/v#{version}/reposnap-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "29a821ca3419b4412f01dc81ecf3dc100eb69ed884e054ed54beaf6f70c6e070"
+      sha256 "575ff6dd544308bfe299d349ad56b3f055e89ee92a6dded4e05db73b306d823e"
     end
   end
 
